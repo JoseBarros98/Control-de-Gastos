@@ -34,4 +34,10 @@ return [
         ' api_key ' => env ( ' SENDGRID_API_KEY ' ),  
     ], 
 
+    'github' => [
+        'client_id' => env('FACEBOOK_ID'),
+        'client_secret' => env('FACEBBOK_SECRET'),
+        'redirect' => env('FACEBOOK_URL'),
+    ],
+
 ];

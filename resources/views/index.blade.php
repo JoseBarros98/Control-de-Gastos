@@ -2,7 +2,7 @@
 <html  >
 <head>
   <meta charset="UTF-8">
-  <title>Añadir Gasto</title>
+  <title> @yield('title')</title>
   <style>
   * {
     margin: 0;
@@ -29,17 +29,17 @@
     color: #435160;
     text-decoration: none;
   }
-  .nav{
-    font-size:1.5em;
-    font-family:"Sofia";
-  }
+
   
   .login {
     width: 350px;
     position: absolute;
-    top: 10%;
+    top: 25%;
     left: 50%;
     margin-left: -175px;
+  }
+  .lista{
+    font-size: 2em;
   }
   
   
@@ -129,61 +129,24 @@
       transform: translateX(10px);
     }
   }
-  #menu{
-  background-color: #000;
- }
-
- #menu ul{
-  list-style: none;
-  margin: 0;
-  padding: 0;clip-path: 
- }
-
- #menu ul li{
-  display: inline-block;
- }
-
- #menu ul li a{
-  color: white;
-  display: block;
-  padding: 20px 20px;
-  text-decoration: none;
- }
-
- #menu ul li a:hover{
-  background-color: #42B881;
- }
   
   </style>
 </head>
 <body>
 
 
-<div class='login'>    
-  <h3>Añadir Gasto</h3>
-  <form method="POST" action="{{ route('gastos.update',$gastos) }}">
-  @csrf
-  @method('PATCH')
-    <input name='nombre' placeholder='Nombre' type='text' value="{{$gastos->nombre}}">
-    <input  name='descripcion' placeholder='Descripcion' type='text' value="{{$gastos->descripcion}}">
-    Fecha <input name='fecha' placeholder='Fecha' type='date' value="{{$gastos->fecha}}">
-    <input  name='total' placeholder='Total' type='text' value="{{$gastos->total}}">
-
-
-    <input class='animated' type='submit' value='Actualizar Gasto'>
-  </form>
-</div>
-
-<div id="menu">
- <ul>
+<div >
+  <h3>Control de Gastos</h3>
   
-   <li><a href="/">Inicio</a></li>
-   <li><a href="/gastos">Gastos</a></li>
-   <li><a href="/ingresos">Ingresos</a></li>
-  </li>
- </ul>
-</div>
-
+  <nav class='login'>
+        <ol class='lista'>
+            <ul><a href="/gasto">Gastos</a></ul>
+            <ul><a href="/gasto/create">Nuevo Gasto</a></ul>
+            <ul><a href="/ingreso">Ingresos</a></ul>
+            <ul><a href="/ingreso/create">Nuevo Ingreso</a></ul>
+            <ul><a href="/contacto">Contacto</a></ul>
+        </ol>
+    </nav>
 
 </body>
 </html>
