@@ -9,15 +9,16 @@ use  Socialite;
 class SocialController extends Controller
 {
     //
-    public function redirect (){
+    public function redirect ($provider){
 
-        return Socialite::driver('facebook')->redirect();
+        return Socialite::driver($provider)->redirect();
     }
 
-    public function callback (){
+    public function callback ($provider){
 
-        $user = Socialite::driver('facebook')->user();
+        $user = Socialite::driver($provider)->user();
 
-        return( $user->getAvatar() );
+        //return( $user->name );
+        return "iniicaste sesion";
     }
 }

@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('auth');
 });
-
+*/
 
 Route::get('/index', function () {
     return view('index');
@@ -25,12 +25,10 @@ Route::resource('/ingreso','IngresoController');
 Route::view('/contacto', 'contacto')->name('contacto');
 Route::post('contacto', 'ContactoController@store')->name('contacto.store');
 
-Route::get ('/redirect','SocialController@redirect');
-Route::get ('/callback','SocialController@callback');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get ('/redirect/{provider}','SocialController@redirect');
+Route::get ('/callback/{provider}','SocialController@callback');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+
