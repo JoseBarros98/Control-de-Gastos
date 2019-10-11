@@ -108,6 +108,6 @@ class GastoController extends Controller
     {
         $gasto->delete();
         $datos=Contacto::all();
-        return view('contacto.index', compact('datos'));
+        return view('gasto.index', compact('datos'));
     }
 }

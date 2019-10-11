@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
  <meta charset="utf-8">
- <title>Gastos</title>
+ <title>Contacto</title>
 
  <style>
   * {
@@ -225,44 +225,35 @@
   </style>
 </head>
 <body>
- <div id="menu">
+
+
+<div class='login'>  
+
+  <h3>Enviar mensaje </h3>
+
+  <form method="POST" action="/gasto">
+  @csrf
+  <input name='nombre' placeholder='Nombre' type='text' value="{{ old('nombre') }}"><br>
+    <input  name='email' placeholder='E-mail' type='email' value="{{ old('email') }}">
+    <input name='asunto' placeholder='Asunto' type='text'value="{{ old('asunto') }}"><br>
+    <textarea name="contenido" placeholder="Mensaje...">{{ old('contenido') }} </textarea>
+
+
+   <center> <input class='animated' type='submit' value='Enviar'></center>
+  </form>
+</div>
+
+<div id="menu">
  <ul>
   
    <li><a href="/">Inicio</a></li>
+   <li><a href="/gasto">Gastos</a></li>
    <li><a href="/ingreso">Ingresos</a></li>
    <li><a href="/contacto">Contacto</a></li>
-   <a href="/gasto/create"><input class='animated' type='submit' value='Añadir Gasto' ></a>
+  </li>
  </ul>
 </div>
-<h3>Gastos Realizados</h3>
-<h5>Mes de Septiembre</h5>
-<center>
-<div id="main-container">
- <table>
-    <thead>
-      <tr>
-          <th>ID</th><th>Nombre</th><th>Descripcion</th><th>Fecha</th><th>Total</th><th>Opciones</th>
-      </tr>
-    </thead>
-    @foreach ($datos as $gasto)
-            <tr>
-            <td scope="row">{{$gasto->id}}</td>
-                <td>{{$gasto->nombre}}</td>
-                <td>{{$gasto->descripcion}}</td>
-                <td>{{$gasto->fecha}}</td>
-                <td>{{$gasto->monto}}</td>
 
-                <td>
-                @csrf
-                @method('DELETE')
-                
-                <a href="{{ route('gasto.edit',$gasto->id)}}"><input class='animated' type='submit' id="edit" value='editar' ></a>
-                
-                </td>
-            </tr>
-     @endforeach
-  </table>
-</div>
-</center>
-  </body>
+
+</body>
 </html>
