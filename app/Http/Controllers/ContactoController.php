@@ -17,6 +17,7 @@ class ContactoController extends Controller
         
         Mail::to('barrosrojasjoserodolfo90@gmail.com')->queue(new MessageReceived($msg));
         
-        return back()->with('status','Recibimos tu mensaje, te responderemos en menos de 24 horas.');
+       
+     return 'Mensaje enviado';
     }
-}
+} 

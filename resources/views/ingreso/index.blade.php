@@ -228,9 +228,10 @@
  <div id="menu">
  <ul>
   
-   <li><a href="/">Inicio</a></li>
+ <li>Billetera Web</li>
    <li><a href="/gasto">Gastos</a></li>
    <li><a href="/contacto">Contacto</a></li>
+   <li><a href="{{url('logout')}}">Cerrar sesion</a></li>
    <a href="/ingreso/create"><input class='animated' type='submit' value='Añadir Ingreso' ></a>
  </ul>
 </div>

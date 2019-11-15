@@ -19,10 +19,10 @@ class MessageReceived extends Mailable
      *
      * @return void
      */
-    public function __construct($msg)
+    public function __construct($msg) 
     {
         $this-> msg = $msg;
-        //
+        
     }
 
     /**

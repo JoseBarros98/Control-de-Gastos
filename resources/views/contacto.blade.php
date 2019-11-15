@@ -231,13 +231,20 @@
 
   <h3>Enviar mensaje </h3>
 
-  <form method="POST" action="/gasto">
+  <form method="POST" action="{{ route('contacto.store') }}">
   @csrf
-  <input name='nombre' placeholder='Nombre' type='text' value="{{ old('nombre') }}"><br>
-    <input  name='email' placeholder='E-mail' type='email' value="{{ old('email') }}">
-    <input name='asunto' placeholder='Asunto' type='text'value="{{ old('asunto') }}"><br>
-    <textarea name="contenido" placeholder="Mensaje...">{{ old('contenido') }} </textarea>
-
+  <div class="form-control">
+    <input name='name' placeholder='Nombre' type='text' >
+  </div>
+  <div class="form-control">
+    <input  name='email' placeholder='E-mail' type='text'>
+  </div>  
+  <div class="form-control">
+    <input name='subject' placeholder='Asunto' type='text'> 
+  </div>
+  <div class="form-control">
+    <textarea name="content" placeholder="Mensaje..."></textarea>
+  </div>
 
    <center> <input class='animated' type='submit' value='Enviar'></center>
   </form>
@@ -246,10 +253,11 @@
 <div id="menu">
  <ul>
   
-   <li><a href="/">Inicio</a></li>
+   <li>Billetera Web</li>
    <li><a href="/gasto">Gastos</a></li>
    <li><a href="/ingreso">Ingresos</a></li>
    <li><a href="/contacto">Contacto</a></li>
+   <li><a href="{{url('logout')}}">Cerrar sesion</a></li>
   </li>
  </ul>
 </div>

@@ -228,10 +228,14 @@
  <div id="menu">
  <ul>
   
-   <li><a href="/">Inicio</a></li>
+ <li>Billetera Web</li>
    <li><a href="/ingreso">Ingresos</a></li>
    <li><a href="/contacto">Contacto</a></li>
+   <li><a href="{{url('logout')}}">Cerrar sesion</a></li>
    <a href="/gasto/create"><input class='animated' type='submit' value='Añadir Gasto' ></a>
+
+
+
  </ul>
 </div>
 <h3>Gastos Realizados</h3>

@@ -14,6 +14,7 @@
         "laravel/socialite": "^4.2",
         "laravel/tinker": "^1.0",
         "laravel/ui": "^1.1",
+        "realrashid/sweet-alert": "^2.0",
         "s-ichikawa/laravel-sendgrid-driver": "^2.1"
     },
     "require-dev": {

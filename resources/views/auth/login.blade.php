@@ -56,20 +56,22 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                               
+                               <ul>
                                     <a class="btn btn-link" href="redirect/facebook">
-                                        {{ __('Facebook') }}
+                                        {{ __('Iniciar con Facebook') }}
                                     </a>
+                                </ul>
+                                <ul>
                                     <a class="btn btn-link" href="redirect/github">
-                                        {{ __('GitHub') }}
+                                        {{ __('Iniciar con GitHub') }}
                                     </a>
-                                
+                                    </ul>
                             </div>
                         </div>
                     </form>

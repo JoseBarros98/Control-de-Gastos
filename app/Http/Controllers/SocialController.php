@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 use  Socialite;
 
@@ -19,6 +20,6 @@ class SocialController extends Controller
         $user = Socialite::driver($provider)->user();
 
         //return( $user->name );
-        return "iniicaste sesion";
+        return Redirect::to('/ingreso');
     }
 }

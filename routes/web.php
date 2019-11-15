@@ -23,7 +23,7 @@ Route::resource('/gasto','GastoController');
 Route::resource('/ingreso','IngresoController');
 
 Route::view('/contacto', 'contacto')->name('contacto');
-Route::post('contacto', 'ContactoController@store')->name('contacto.store');
+//Route::post('contacto', 'ContactoController@store')->name('contacto.store');
 
 Route::get ('/redirect/{provider}','SocialController@redirect');
 Route::get ('/callback/{provider}','SocialController@callback');
@@ -31,4 +31,4 @@ Route::get ('/callback/{provider}','SocialController@callback');
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );
