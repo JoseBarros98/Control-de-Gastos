@@ -1,5 +1,6 @@
 <?php
 
+use RealRashid\SweetAlert\Facades\Alert;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,9 +16,10 @@
 });
 */
 
-Route::get('/index', function () {
-    return view('index');
+Route::get('/', function () {
+    return view('auth/login');
 });
+Auth::routes();
 Route::resource('/contacto','ContactoController');
 Route::resource('/gasto','GastoController');
 Route::resource('/ingreso','IngresoController');
@@ -28,7 +30,7 @@ Route::view('/contacto', 'contacto')->name('contacto');
 Route::get ('/redirect/{provider}','SocialController@redirect');
 Route::get ('/callback/{provider}','SocialController@callback');
 
-Auth::routes();
+
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/logout', 'Auth\LoginController@logout')->name('logout' );

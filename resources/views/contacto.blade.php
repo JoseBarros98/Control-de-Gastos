@@ -199,33 +199,38 @@
   }
   #menu{
   background-color: #000;
- }
-
-  #menu ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;clip-path: 
   }
 
-  #menu ul li{
-    display: inline-block;
-  }
+    #menu ul{
+      list-style: none;
+      margin: 0;
+      padding: 0;clip-path: 
+    }
 
-  #menu ul li a{
-    color: white;
-    display: block;
-    padding: 20px 20px;
-    text-decoration: none;
-  }
+    #menu ul li{
+      display: inline-block;
+    }
 
-  #menu ul li a:hover{
-    background-color: #42B881;
-  }
+    #menu ul li a{
+      color: white;
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+    }
+
+    #menu ul li a:hover{
+      background-color: #42B881;
+    }
     
   </style>
 </head>
 <body>
 
+@if(session('success_message'))
+    <div class="alert alert-success">
+    {{ session ('success_message')}}
+    </div>
+@endif
 
 <div class='login'>  
 
@@ -237,7 +242,7 @@
     <input name='name' placeholder='Nombre' type='text' >
   </div>
   <div class="form-control">
-    <input  name='email' placeholder='E-mail' type='text'>
+    <input  name='email' placeholder='E-mail' type='email'>
   </div>  
   <div class="form-control">
     <input name='subject' placeholder='Asunto' type='text'> 
@@ -253,7 +258,7 @@
 <div id="menu">
  <ul>
   
-   <li>Billetera Web</li>
+   <li>Billetera Web </li>
    <li><a href="/gasto">Gastos</a></li>
    <li><a href="/ingreso">Ingresos</a></li>
    <li><a href="/contacto">Contacto</a></li>
@@ -261,6 +266,7 @@
   </li>
  </ul>
 </div>
+@include('sweetalert::alert')
 
 
 </body>

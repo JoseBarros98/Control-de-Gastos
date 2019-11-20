@@ -228,7 +228,7 @@
  <div id="menu">
  <ul>
   
- <li>Billetera Web</li>
+ <li>Billetera Web </li>
    <li><a href="/gasto">Gastos</a></li>
    <li><a href="/contacto">Contacto</a></li>
    <li><a href="{{url('logout')}}">Cerrar sesion</a></li>

@@ -15,6 +15,7 @@
                     @endif
 
                     You are logged in!
+                    fuck
                 </div>
             </div>
         </div>

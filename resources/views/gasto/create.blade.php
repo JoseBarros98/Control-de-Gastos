@@ -176,7 +176,7 @@
 <div id="menu">
  <ul>
   
- <li>Billetera Web </li>
+ <li>Billetera Web de </li>
    <li><a href="/gasto">Gastos</a></li>
    <li><a href="/ingreso">Ingresos</a></li>
    <li><a href="/contacto">Contacto</a></li>
